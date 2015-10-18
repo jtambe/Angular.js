@@ -12,8 +12,8 @@
   <div>
     <p>Enter first name: <input type="text" ng-model ="friend.firstname"></p>
     <p>Enter last name: <input type="text" ng-model ="friend.lastname"></p>
-	<p> Full name of friend: {{ friend.firstname + ' ' + friend.lastname}}</p>
-	<p> Full name of friend using fullname function :  {{ friend.fullname()}}</p>
+	<p> Full name of friend: {{ friend.firstname + ' ' + friend.lastname }}</p>
+	<p> Full name of friend using fullname function :  {{ friend.fullname() }}</p>
   </div>
 
  </div>
