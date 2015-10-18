@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+
+<head>
+<title>  ng-init and ng-repeat</title>
+<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+
+<body>
+ <div ng-app = "" ng-init = "friends = [{fname:'Alena',fcountry :'Russia'},{fname:'Monika',fcountry:'Poland'},{fname:'Prachi',fcountry:'India'}]"> 
+  <p> My Friendlist</p>
+   <ol>
+     <li ng-repeat = "friend in friends">
+      {{ 'Name: '+ friend.fname + ', Country: '+ friend.fcountry }}
+     </li>
+   </ol>
+ </div>
+</body>
+
+</html>
