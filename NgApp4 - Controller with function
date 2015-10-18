@@ -22,7 +22,7 @@
   var controllerApp = angular.module("controllerApp", []);
   controllerApp.controller('friendctrl',function($scope){
    $scope.friend = {
-    firstname: "first",
+        firstname: "first",
 	lastname: "last",
 
 	fullname: function(){
