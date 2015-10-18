@@ -82,7 +82,10 @@
 	fullname: function(){
 	 var friendObj; /*friendObj cannot access firstname and lastname at this point*/
 	 friendObj = $scope.friend; /* Now friendObj can acess firstname and lastname properties*/
-	 return friendObj.firstname + " " + friendObj.lastname;	
+	 return friendObj.firstname + " " + friendObj.lastname;
+	 
+	 // Use following way in case new var friendObj is not be created
+	 // return $scope.friend.firstname + " " + $scope.friend.lastname; 
 	}
 	
    };
