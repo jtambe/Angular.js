@@ -11,9 +11,12 @@
      <h2> Welcome. {{hello.title}} </h2>
      <div>
        <input type = "text" ng-model = "title" placeholder = "Enter your title">
-	      Your title : {{title}}
+	   Your title (using curly braces): {{title}}
      </div>  
-	        
+	 <div>
+	 <p> Following is ng-bind result</p>
+	  <p ng-bind = "title"> </p>
+	 </div>      
    </div>
    
    <script>
