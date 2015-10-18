@@ -8,6 +8,7 @@
 
 <body>
  <div ng-app = "" ng-init = "friends = [{fname:'Alena',fcountry :'Russia'},{fname:'Monika',fcountry:'Poland'},{fname:'Prachi',fcountry:'India'}]"> 
+ <!--<div ng-app = "myapp" ng-init = "friends = [{fname:'Alena',fcountry :'Russia'},{fname:'Monika',fcountry:'Poland'},{fname:'Prachi',fcountry:'India'}]"> -->
   <p> My Friendlist</p>
    <ol>
      <li ng-repeat = "friend in friends">
@@ -15,6 +16,13 @@
      </li>
    </ol>
  </div>
+ 
+<!-- Need to include a script file with blank app, in case ng-app is given a name in html DOM
+<script>
+ angular.module("myapp", []) 
+</script>
+ -->
+ 
+ 
 </body>
-
 </html>
