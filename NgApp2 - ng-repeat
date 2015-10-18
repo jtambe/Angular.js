@@ -8,7 +8,9 @@
 
 <body>
  <div ng-app = "" ng-init = "friends = [{fname:'Alena',fcountry :'Russia'},{fname:'Monika',fcountry:'Poland'},{fname:'Prachi',fcountry:'India'}]"> 
+ 
  <!--<div ng-app = "myapp" ng-init = "friends = [{fname:'Alena',fcountry :'Russia'},{fname:'Monika',fcountry:'Poland'},{fname:'Prachi',fcountry:'India'}]"> -->
+ 
   <p> My Friendlist</p>
    <ol>
      <li ng-repeat = "friend in friends">
