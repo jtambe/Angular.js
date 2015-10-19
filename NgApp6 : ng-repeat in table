@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+
+<head>
+<title> Controller with function </title>
+<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<style>
+        table, th , td {
+            border: 1px solid grey;
+            border-collapse: collapse;
+            padding: 5px;
+         }
+         
+         table tr:nth-child(odd) {
+            background-color: #f2f2f2;
+         }
+         
+         table tr:nth-child(even) {
+            background-color: #ffffff;
+         }
+</style>
+</head>
+
+<body>
+ <div ng-app ="controllerApp" ng-controller ="friendctrl">
+  <div>
+  <table border ="1">
+	<tr>
+		<td> Enter first name:  </td>
+		<td> <input type="text" ng-model ="friend.firstname">  </td>
+	</tr>
+	<tr>
+		<td> Enter last name:  </td>
+		<td> <input type="text" ng-model ="friend.lastname">  </td>
+	</tr>
+	<tr>
+		<td> Bills Paid:   </td>
+		<td> <input type="text" ng-model ="friend.billpaid">  </td>
+	</tr>
+	<tr>
+		<td> Enter dance name:  </td>
+		<td> <input type="text" ng-model ="danceName">  </td>
+	</tr>	
+  </table>
+  </div>
+  
+  </br>
+  </br>
+ 
+  <div>
+  <table border ="1">
+	<tr>
+		<td> Name in upper case:  </td>
+		<td> {{ friend.fullname() | uppercase}}  </td>
+	</tr>
+	<tr>
+		<td> Name in lower case:  </td>
+		<td> {{ friend.fullname() | lowercase}}  </td>
+	</tr>
+	<tr>
+		<td> Bills Paid:   </td>
+		<td> {{ friend.billpaid | currency }}  </td>
+	</tr>
+	<tr>
+		<td> Dance detail  </td>
+		<td> 
+		<table>
+          	<tr>
+				<th> Dance Name</th>
+				<th> Number of Dances</th>
+			</tr>
+			<tr ng-repeat = "dance in friend.dancesDanced | filter : danceName | orderBy: 'number' ">
+				<td>{{dance.dance}}</td>
+				<td>{{dance.number}}</td>
+			</tr>		
+	  	</table>
+
+		</td>
+	</tr>	
+  </table>
+  </div>
+  
+  
+
+ </div>
+ 
+ <script>
+  var controllerApp = angular.module("controllerApp", []);
+  controllerApp.controller('friendctrl',function($scope){
+   $scope.friend = {
+    	firstname: "first",
+	lastname: "last",
+	billpaid : 25,
+	
+	dancesDanced:[
+	 {dance:'Salsa', number:10},
+	 {dance:'Bachata', number:18},
+	 {dance:'Kizomba', number:4}	
+	],
+		
+	fullname: function(){
+	 var friendObj; /*friendObj cannot access firstname and lastname at this point*/
+	 friendObj = $scope.friend; /* Now friendObj can acess firstname and lastname properties*/
+	 return friendObj.firstname + " " + friendObj.lastname;
+	 
+	 // Use following way in case new var friendObj is not be created
+	 // return $scope.friend.firstname + " " + $scope.friend.lastname; 
+	}
+	
+   };
+  }
+  );
+ 
+ </script>
+
+</body>
+
+</html>
