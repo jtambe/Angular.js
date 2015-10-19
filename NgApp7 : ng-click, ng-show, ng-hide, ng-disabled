@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+<head>
+<title> Controller with function </title>
+<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+
+
+<body>
+	<div ng-app="">
+		<table border = "1">
+			
+			<tr>
+			    <!-- initially ng-disabled = false, when checkbox is checked ng-model = xyz becomes true and thus the implementation -->			
+				<td> <input type="checkbox" ng-model="xyz"> Disable button </td>
+				<td> <button ng-disabled = "xyz" > Button </td>				
+			</tr>
+
+			<tr>
+			    <!-- initially ng-show = false, when checkbox is checked ng-model = abc becomes true and thus the implementation -->
+				<td> <input type="checkbox" ng-model="abc"> Show button </td>
+				<td> <button ng-show = "abc" > Button </td>				
+			</tr>
+
+			<tr>
+				<!-- initially ng-hide = false, when checkbox is checked ng-model = lmn becomes true and thus the implementation -->
+				<td> <input type="checkbox" ng-model="lmn"> Hide button </td>
+				<td> <button ng-hide = "lmn" > Button </td>				
+			</tr>
+
+			<tr>
+				<td>Counter:  {{counter}} </td>
+				<td><button ng-click="counter = counter + 1"> Add Counter</td>
+				<!--following style doesn't work in angular js-->
+				<!--<td><button ng-click="counter = counter++"> Add Counter </td>-->
+			</tr>
+						
+		</table>
+	</div>
+	
+
+</body>
+</html>
